@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ListOpeningHandler(context *gin.Context) {
+func ListOpeningsHandler(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"message": "GET Opening",
 	})
