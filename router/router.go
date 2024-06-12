@@ -4,15 +4,10 @@ import "github.com/gin-gonic/gin"
 
 func Initialize() {
 	//Inicializa o router utilizando a configurações Default do Gin
-	r := gin.Default()
+	router := gin.Default()
 
-	//Definindo uma Rota
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
+	//Inicializando Routes
+	initializeRoutes(router)
 	//Roda a Api
-	r.Run()
+	router.Run()
 }
