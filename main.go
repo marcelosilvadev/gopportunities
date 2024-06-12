@@ -1,20 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"github.com/marcelosilvadev/gopportunities.git/router"
 )
 
 func main() {
-	//Inicializa o router utilizando a configurações Default do Gin
-	r := gin.Default()
-
-	//Definindo uma Rota
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
-	//Roda a Api
-	r.Run()
+	//Inicia Router
+	router.Initialize()
 }
