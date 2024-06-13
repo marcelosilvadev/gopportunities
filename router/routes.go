@@ -6,6 +6,15 @@ import (
 )
 
 func initializeRoutes(router *gin.Engine) {
+	//Initialize Handler
+	handler.InitializeHandler()
+
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
+
 	v1 := router.Group("/api/v1/")
 	{
 		v1.GET("/opening", handler.ShowOpeningHandler)
